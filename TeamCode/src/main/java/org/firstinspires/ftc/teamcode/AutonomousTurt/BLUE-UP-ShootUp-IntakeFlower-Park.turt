@@ -1,0 +1,188 @@
+{
+  "startPoint": {
+    "x": 60.25,
+    "y": 134.7,
+    "heading": "linear",
+    "locked": false,
+    "startDeg": -90,
+    "endDeg": 90
+  },
+  "lines": [
+    {
+      "id": "mwifql7p-32ky5w",
+      "name": "",
+      "endPoint": {
+        "x": 60.25,
+        "y": 124.1634456123673,
+        "heading": "constant",
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#8CD6B8",
+      "eventMarkers": [],
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "hidden": false,
+      "maxSpeed": 10
+    },
+    {
+      "id": "line-mvoodacf-a9k65h",
+      "name": "",
+      "endPoint": {
+        "x": 50.499420260916274,
+        "y": 124.1634456123673,
+        "heading": "constant",
+        "startDeg": 90,
+        "endDeg": 180,
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#8CD6B8",
+      "eventMarkers": [],
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "hidden": false,
+      "maxSpeed": 20
+    },
+    {
+      "id": "line-mwihbgc7-yqyhb5",
+      "name": "",
+      "endPoint": {
+        "x": 49,
+        "y": 131.46789078487424,
+        "heading": "constant",
+        "degrees": 90
+      },
+      "controlPoints": [],
+      "color": "#576B55",
+      "locked": false,
+      "maxSpeed": 15
+    },
+    {
+      "id": "line-mwihgjkm-3ub0dw",
+      "name": "",
+      "endPoint": {
+        "x": 9.4,
+        "y": 124,
+        "heading": "constant",
+        "degrees": 90
+      },
+      "controlPoints": [],
+      "color": "#C77A6B",
+      "locked": false,
+      "maxSpeed": 20
+    }
+  ],
+  "shapes": [
+    {
+      "id": "biobuzz-hive-red",
+      "name": "HiveRedSide",
+      "vertices": [
+        {
+          "x": 46.5,
+          "y": 92
+        },
+        {
+          "x": 46.5,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    },
+    {
+      "id": "biobuzz-hive-blue",
+      "name": "HiveBlueSide",
+      "vertices": [
+        {
+          "x": 95,
+          "y": 92
+        },
+        {
+          "x": 95,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    }
+  ],
+  "sequence": [
+    {
+      "kind": "wait",
+      "id": "mwigshuu-3f74e1",
+      "name": "IfDown",
+      "durationMs": 8000,
+      "locked": false
+    },
+    {
+      "kind": "wait",
+      "id": "mvooe4m1-aa8e2c",
+      "name": "Shoot",
+      "durationMs": 4000,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "mwifql7p-32ky5w"
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvoodacf-a9k65h"
+    },
+    {
+      "kind": "wait",
+      "id": "mwihfk0u-1woria",
+      "name": "",
+      "durationMs": 500,
+      "locked": false
+    },
+    {
+      "kind": "rotate",
+      "id": "mwihcpwj-iqz4n1",
+      "name": "",
+      "degrees": 90,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mwihbgc7-yqyhb5"
+    },
+    {
+      "kind": "wait",
+      "id": "mwihhs60-udqe4k",
+      "name": "Intake",
+      "durationMs": 3000,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mwihgjkm-3ub0dw"
+    }
+  ],
+  "extraData": {}
+}

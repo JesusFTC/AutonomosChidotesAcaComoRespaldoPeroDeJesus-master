@@ -1,0 +1,181 @@
+{
+  "startPoint": {
+    "x": 60,
+    "y": 9.3,
+    "heading": "linear",
+    "locked": false,
+    "startDeg": 90,
+    "endDeg": -90
+  },
+  "lines": [
+    {
+      "id": "line-mvomw4li-ht1yn4",
+      "name": "DriveToShoot",
+      "endPoint": {
+        "x": 24.982442450253608,
+        "y": 26.51938882106403,
+        "heading": "constant",
+        "startDeg": 90,
+        "endDeg": -90,
+        "degrees": 90,
+        "reverse": false
+      },
+      "controlPoints": [],
+      "color": "#8CD6B8",
+      "eventMarkers": [],
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "hidden": false,
+      "maxSpeed": 25
+    },
+    {
+      "id": "line-mvomx6xa-f31bha",
+      "name": "",
+      "endPoint": {
+        "x": 10,
+        "y": 12.028872415138515,
+        "heading": "constant",
+        "startDeg": -90,
+        "endDeg": -90,
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#A5A976",
+      "locked": false,
+      "eventMarkers": [],
+      "hidden": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "maxSpeed": 20
+    },
+    {
+      "id": "mwh0aerh-ouuhfv",
+      "name": "",
+      "endPoint": {
+        "x": 24.982442450253608,
+        "y": 26.51938882106403,
+        "heading": "constant",
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#85C667",
+      "eventMarkers": [],
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "hidden": false
+    },
+    {
+      "id": "line-mwh0sglo-8qbzwt",
+      "name": "",
+      "endPoint": {
+        "x": 10,
+        "y": 92,
+        "heading": "constant",
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#998797",
+      "locked": false
+    }
+  ],
+  "shapes": [
+    {
+      "id": "biobuzz-hive-red",
+      "name": "HiveRedSide",
+      "vertices": [
+        {
+          "x": 46.5,
+          "y": 92
+        },
+        {
+          "x": 46.5,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    },
+    {
+      "id": "biobuzz-hive-blue",
+      "name": "HiveBlueSide",
+      "vertices": [
+        {
+          "x": 95,
+          "y": 92
+        },
+        {
+          "x": 95,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    }
+  ],
+  "sequence": [
+    {
+      "kind": "wait",
+      "id": "mvomwxq5-bsppmz",
+      "name": "Shoot",
+      "durationMs": 4000,
+      "locked": false,
+      "_linkedName": "Shoot"
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvomw4li-ht1yn4"
+    },
+    {
+      "kind": "rotate",
+      "id": "mwh08t38-nlqyo7",
+      "name": "",
+      "degrees": -90,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvomx6xa-f31bha"
+    },
+    {
+      "kind": "wait",
+      "id": "mvomyjgu-zeucxm",
+      "name": "Intake",
+      "durationMs": 2000,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "mwh0aerh-ouuhfv"
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mwh0sglo-8qbzwt"
+    }
+  ],
+  "extraData": {}
+}

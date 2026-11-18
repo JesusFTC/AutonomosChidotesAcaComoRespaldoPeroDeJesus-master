@@ -1,0 +1,167 @@
+{
+  "version": "2.6.0",
+  "header": {
+    "info": "Created with Turtle Tracer",
+    "copyright": "Copyright 2026 Matthew Allen. Licensed under the Modified Apache License, Version 2.0.",
+    "link": "https://github.com/Mallen220/TurtleTracer"
+  },
+  "startPoint": {
+    "x": 60,
+    "y": 9.56067108856808,
+    "heading": "linear",
+    "locked": false,
+    "startDeg": 90,
+    "endDeg": 180
+  },
+  "lines": [
+    {
+      "id": "line-mvoolota-rdhgdo",
+      "name": "DriveToShoot",
+      "endPoint": {
+        "x": 19.617635583300814,
+        "y": 106.93523214982443,
+        "heading": "linear",
+        "startDeg": 90,
+        "endDeg": 90
+      },
+      "controlPoints": [
+        {
+          "x": 20.199765899336715,
+          "y": 43.75731564572768
+        }
+      ],
+      "color": "#8CD6B8",
+      "eventMarkers": [],
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "hidden": false
+    },
+    {
+      "id": "mvoon2fk-ed8t94",
+      "name": "",
+      "endPoint": {
+        "x": 13.27350760827156,
+        "y": 106.93523214982443,
+        "heading": "linear",
+        "startDeg": 180,
+        "endDeg": 180
+      },
+      "controlPoints": [],
+      "color": "#9BBBDB",
+      "eventMarkers": [],
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": ""
+    },
+    {
+      "id": "mvop1f5a-k1gpp0",
+      "name": "",
+      "endPoint": {
+        "x": 13.27350760827156,
+        "y": 125.54534306894827,
+        "heading": "linear",
+        "startDeg": 180,
+        "endDeg": 180
+      },
+      "controlPoints": [],
+      "color": "#C5CC9C",
+      "eventMarkers": [],
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": ""
+    }
+  ],
+  "sequence": [
+    {
+      "kind": "wait",
+      "id": "mvoom2mw-jvg7jk",
+      "name": "Shoot",
+      "durationMs": 4000,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvoolota-rdhgdo"
+    },
+    {
+      "kind": "rotate",
+      "id": "mvoomwt2-ziekym",
+      "name": "",
+      "degrees": 180,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "mvoon2fk-ed8t94"
+    },
+    {
+      "kind": "wait",
+      "id": "mvoonduz-z132gs",
+      "name": "Intake",
+      "durationMs": 4000,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "mvop1f5a-k1gpp0"
+    }
+  ],
+  "shapes": [
+    {
+      "id": "biobuzz-hive-red",
+      "name": "HiveRedSide",
+      "vertices": [
+        {
+          "x": 46.5,
+          "y": 92
+        },
+        {
+          "x": 46.5,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    },
+    {
+      "id": "biobuzz-hive-blue",
+      "name": "HiveBlueSide",
+      "vertices": [
+        {
+          "x": 95,
+          "y": 92
+        },
+        {
+          "x": 95,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    }
+  ],
+  "extraData": {}
+}

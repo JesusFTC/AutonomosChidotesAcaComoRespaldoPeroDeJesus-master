@@ -1,0 +1,252 @@
+{
+  "startPoint": {
+    "x": 60.25,
+    "y": 9.35,
+    "heading": "linear",
+    "locked": false,
+    "startDeg": 90,
+    "endDeg": -90
+  },
+  "lines": [
+    {
+      "id": "line-mvone2ih-y564zj",
+      "name": "",
+      "endPoint": {
+        "x": 60.25,
+        "y": 107.71030109235446,
+        "heading": "linear",
+        "startDeg": 90,
+        "endDeg": 90
+      },
+      "controlPoints": [],
+      "color": "#DBAA76",
+      "locked": false,
+      "eventMarkers": [],
+      "hidden": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "maxSpeed": 25
+    },
+    {
+      "id": "line-mvoneasp-3l21ju",
+      "name": "",
+      "endPoint": {
+        "x": 15.936981577754112,
+        "y": 107.71030109235446,
+        "heading": "linear",
+        "startDeg": 180,
+        "endDeg": 180
+      },
+      "controlPoints": [],
+      "color": "#857B89",
+      "locked": false,
+      "eventMarkers": [],
+      "hidden": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "maxSpeed": 20
+    },
+    {
+      "id": "mvonf47b-fgf8wb",
+      "name": "",
+      "endPoint": {
+        "x": 60,
+        "y": 107.71030109235446,
+        "heading": "linear",
+        "startDeg": 180,
+        "endDeg": 180
+      },
+      "controlPoints": [],
+      "color": "#99869B",
+      "eventMarkers": [],
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "hidden": false,
+      "maxSpeed": 25
+    },
+    {
+      "id": "line-mvonf7fj-sx38xw",
+      "name": "",
+      "endPoint": {
+        "x": 60,
+        "y": 134.6,
+        "heading": "linear",
+        "startDeg": -90,
+        "endDeg": -90
+      },
+      "controlPoints": [],
+      "color": "#8679B8",
+      "locked": false,
+      "eventMarkers": [],
+      "hidden": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "maxSpeed": 20
+    },
+    {
+      "id": "mvonfsoq-b794xs",
+      "name": "",
+      "endPoint": {
+        "x": 60,
+        "y": 124.11425260718426,
+        "heading": "linear",
+        "startDeg": -90,
+        "endDeg": -90
+      },
+      "controlPoints": [],
+      "color": "#C8BB7A",
+      "eventMarkers": [],
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "hidden": false,
+      "maxSpeed": 10
+    },
+    {
+      "id": "line-mvong3g0-ruozhj",
+      "name": "",
+      "endPoint": {
+        "x": 9.7,
+        "y": 124.11425260718426,
+        "heading": "linear",
+        "startDeg": -90,
+        "endDeg": -90
+      },
+      "controlPoints": [],
+      "color": "#77CD56",
+      "locked": false,
+      "eventMarkers": [],
+      "hidden": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "maxSpeed": 25
+    }
+  ],
+  "shapes": [
+    {
+      "id": "biobuzz-hive-red",
+      "name": "HiveRedSide",
+      "vertices": [
+        {
+          "x": 46.5,
+          "y": 92
+        },
+        {
+          "x": 46.5,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    },
+    {
+      "id": "biobuzz-hive-blue",
+      "name": "HiveBlueSide",
+      "vertices": [
+        {
+          "x": 95,
+          "y": 92
+        },
+        {
+          "x": 95,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    }
+  ],
+  "sequence": [
+    {
+      "kind": "wait",
+      "id": "mvonapt2-igq9z5",
+      "name": "Shoot",
+      "durationMs": 4000,
+      "locked": false,
+      "_linkedName": "Shoot"
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvone2ih-y564zj"
+    },
+    {
+      "kind": "rotate",
+      "id": "mvonee3s-8mn17r",
+      "name": "",
+      "degrees": 180,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvoneasp-3l21ju"
+    },
+    {
+      "kind": "wait",
+      "id": "mwgzz6gr-ot1p7i",
+      "name": "Intake",
+      "durationMs": 2500,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "mvonf47b-fgf8wb"
+    },
+    {
+      "kind": "rotate",
+      "id": "mvonf9nu-q7s5d2",
+      "name": "",
+      "degrees": -90,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvonf7fj-sx38xw"
+    },
+    {
+      "kind": "wait",
+      "id": "mvonfoly-h5i39l",
+      "name": "Shoot",
+      "durationMs": 4000,
+      "locked": false,
+      "_linkedName": "Shoot"
+    },
+    {
+      "kind": "path",
+      "lineId": "mvonfsoq-b794xs"
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvong3g0-ruozhj"
+    }
+  ],
+  "extraData": {}
+}

@@ -1,0 +1,272 @@
+{
+  "startPoint": {
+    "x": 60,
+    "y": 9.3,
+    "heading": "linear",
+    "locked": false,
+    "startDeg": 90,
+    "endDeg": -90
+  },
+  "lines": [
+    {
+      "id": "line-mvomw4li-ht1yn4",
+      "name": "DriveToShoot",
+      "endPoint": {
+        "x": 24.982442450253608,
+        "y": 26.51938882106403,
+        "heading": "constant",
+        "startDeg": 90,
+        "endDeg": -90,
+        "degrees": 90,
+        "reverse": false
+      },
+      "controlPoints": [],
+      "color": "#8CD6B8",
+      "eventMarkers": [],
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "hidden": false,
+      "maxSpeed": 25
+    },
+    {
+      "id": "line-mvomx6xa-f31bha",
+      "name": "",
+      "endPoint": {
+        "x": 10,
+        "y": 12.028872415138515,
+        "heading": "constant",
+        "startDeg": -90,
+        "endDeg": -90,
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#A5A976",
+      "locked": false,
+      "eventMarkers": [],
+      "hidden": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "maxSpeed": 20
+    },
+    {
+      "id": "mwh0aerh-ouuhfv",
+      "name": "",
+      "endPoint": {
+        "x": 24.982442450253608,
+        "y": 26.51938882106403,
+        "heading": "constant",
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#85C667",
+      "eventMarkers": [],
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": ""
+    },
+    {
+      "id": "line-mvomyq0q-uka99f",
+      "name": "",
+      "endPoint": {
+        "x": 24.982442450253608,
+        "y": 125.35811827657321,
+        "heading": "constant",
+        "startDeg": -90,
+        "endDeg": -90,
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#7995CA",
+      "locked": false,
+      "eventMarkers": [],
+      "hidden": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "maxSpeed": 25
+    },
+    {
+      "id": "line-mwh0j44d-terdl5",
+      "name": "",
+      "endPoint": {
+        "x": 60,
+        "y": 125.35811827657321,
+        "heading": "constant",
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#B9667B",
+      "locked": false,
+      "maxSpeed": 25
+    },
+    {
+      "id": "mwh0jhev-6xw98d",
+      "name": "",
+      "endPoint": {
+        "x": 60,
+        "y": 134.6,
+        "heading": "constant",
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#BA559B",
+      "eventMarkers": [],
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "maxSpeed": 20
+    },
+    {
+      "id": "line-mwh0kf3w-one6lx",
+      "name": "",
+      "endPoint": {
+        "x": 60,
+        "y": 125.35811827657321,
+        "heading": "constant",
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#88D558",
+      "locked": false,
+      "maxSpeed": 10
+    },
+    {
+      "id": "line-mwh0kiiw-dbt48b",
+      "name": "",
+      "endPoint": {
+        "x": 10,
+        "y": 125.35811827657321,
+        "heading": "constant",
+        "degrees": -90
+      },
+      "controlPoints": [],
+      "color": "#6DCD9C",
+      "locked": false,
+      "maxSpeed": 25
+    }
+  ],
+  "shapes": [
+    {
+      "id": "biobuzz-hive-red",
+      "name": "HiveRedSide",
+      "vertices": [
+        {
+          "x": 46.5,
+          "y": 92
+        },
+        {
+          "x": 46.5,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    },
+    {
+      "id": "biobuzz-hive-blue",
+      "name": "HiveBlueSide",
+      "vertices": [
+        {
+          "x": 95,
+          "y": 92
+        },
+        {
+          "x": 95,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    }
+  ],
+  "sequence": [
+    {
+      "kind": "wait",
+      "id": "mvomwxq5-bsppmz",
+      "name": "Shoot",
+      "durationMs": 4000,
+      "locked": false,
+      "_linkedName": "Shoot"
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvomw4li-ht1yn4"
+    },
+    {
+      "kind": "rotate",
+      "id": "mwh08t38-nlqyo7",
+      "name": "",
+      "degrees": -90,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvomx6xa-f31bha"
+    },
+    {
+      "kind": "wait",
+      "id": "mvomyjgu-zeucxm",
+      "name": "Intake",
+      "durationMs": 2000,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "mwh0aerh-ouuhfv"
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvomyq0q-uka99f"
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mwh0j44d-terdl5"
+    },
+    {
+      "kind": "path",
+      "lineId": "mwh0jhev-6xw98d"
+    },
+    {
+      "kind": "wait",
+      "id": "mwh0mw4b-xt1viq",
+      "name": "Shoot",
+      "durationMs": 4000,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mwh0kf3w-one6lx"
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mwh0kiiw-dbt48b"
+    }
+  ],
+  "extraData": {}
+}

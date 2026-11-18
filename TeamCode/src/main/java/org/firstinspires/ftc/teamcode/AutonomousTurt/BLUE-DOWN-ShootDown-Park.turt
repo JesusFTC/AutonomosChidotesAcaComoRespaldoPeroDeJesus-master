@@ -1,0 +1,138 @@
+{
+  "startPoint": {
+    "x": 60.25,
+    "y": 9.596176355833006,
+    "heading": "linear",
+    "locked": false,
+    "startDeg": 90,
+    "endDeg": 90
+  },
+  "lines": [
+    {
+      "id": "line-mvop4a0t-m31va4",
+      "name": "DriveToShoot",
+      "endPoint": {
+        "x": 16.788919235271166,
+        "y": 48.74056138257099,
+        "heading": "constant",
+        "startDeg": 90,
+        "endDeg": 90,
+        "degrees": 90
+      },
+      "controlPoints": [],
+      "color": "#8CD6B8",
+      "eventMarkers": [],
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": "",
+      "hidden": false,
+      "maxSpeed": 25
+    },
+    {
+      "id": "line-mwgvl6tc-5n9wce",
+      "name": "",
+      "endPoint": {
+        "x": 16.788919235271166,
+        "y": 90.20074131876709,
+        "heading": "constant",
+        "startDeg": 90,
+        "endDeg": 90,
+        "degrees": 90
+      },
+      "controlPoints": [],
+      "color": "#7DD978",
+      "locked": false,
+      "maxSpeed": 20
+    },
+    {
+      "id": "line-mwgvlov8-8azh4y",
+      "name": "",
+      "endPoint": {
+        "x": 10,
+        "y": 90.20074131876709,
+        "heading": "constant",
+        "degrees": 90
+      },
+      "controlPoints": [],
+      "color": "#9887CB",
+      "locked": false,
+      "maxSpeed": 10
+    }
+  ],
+  "shapes": [
+    {
+      "id": "biobuzz-hive-red",
+      "name": "HiveRedSide",
+      "vertices": [
+        {
+          "x": 46.5,
+          "y": 92
+        },
+        {
+          "x": 46.5,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 52
+        },
+        {
+          "x": 49,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    },
+    {
+      "id": "biobuzz-hive-blue",
+      "name": "HiveBlueSide",
+      "vertices": [
+        {
+          "x": 95,
+          "y": 92
+        },
+        {
+          "x": 95,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 52
+        },
+        {
+          "x": 97.5,
+          "y": 92
+        }
+      ],
+      "color": "#3f3f3f",
+      "fillColor": "#fca5a5",
+      "type": "obstacle"
+    }
+  ],
+  "sequence": [
+    {
+      "kind": "wait",
+      "id": "mvop5x98-mb0lk4",
+      "name": "Shoot",
+      "durationMs": 4000,
+      "locked": false
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mvop4a0t-m31va4"
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mwgvl6tc-5n9wce"
+    },
+    {
+      "kind": "path",
+      "lineId": "line-mwgvlov8-8azh4y"
+    }
+  ],
+  "extraData": {}
+}

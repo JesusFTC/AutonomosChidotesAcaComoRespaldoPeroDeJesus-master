@@ -34,7 +34,7 @@ public class IntakeCommand extends CommandBase {
             timer.startTime();
             crono = true;
         }
-        if (crono){
+        if (crono || gamepadEx.getButton(GamepadKeys.Button.LEFT_BUMPER)){
             intakeSubsystem.reverse();
         }
         else {

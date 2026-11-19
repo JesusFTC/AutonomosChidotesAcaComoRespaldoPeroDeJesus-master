@@ -13,8 +13,9 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.teamcode.Chasis.ChasisCommand;
 import org.firstinspires.ftc.teamcode.Chasis.ChasisSusbystem;
 import org.firstinspires.ftc.teamcode.Intake.IntakeCommand;
-import org.firstinspires.ftc.teamcode.Intake.IntakeCommandReverse;
 import org.firstinspires.ftc.teamcode.Intake.IntakeSubsystem;
+import org.firstinspires.ftc.teamcode.Intake.servo.IntakeServoCommand;
+import org.firstinspires.ftc.teamcode.Intake.servo.IntakeServoSubsystem;
 import org.firstinspires.ftc.teamcode.Shooter.ShooterCommand;
 import org.firstinspires.ftc.teamcode.Shooter.ShooterSubsystem;
 import org.firstinspires.ftc.teamcode.pedro.Constants;
@@ -32,6 +33,7 @@ public class MainController extends CommandOpMode {
 
     IntakeSubsystem intakeSubsystem;
     ShooterSubsystem shooterSubsystem;
+    IntakeServoSubsystem intakeServoSubsystem;
     ConfigureIMU configureIMU;
     Follower follower;
 
@@ -49,6 +51,7 @@ public class MainController extends CommandOpMode {
         chasisSusbystem = new ChasisSusbystem(hardwareMap, configureIMU);
         intakeSubsystem = new IntakeSubsystem(hardwareMap);
         shooterSubsystem = new ShooterSubsystem(hardwareMap);
+        intakeServoSubsystem = new IntakeServoSubsystem(hardwareMap);
 
         Drawing.init();
         follower = Constants.create(hardwareMap);
@@ -73,12 +76,8 @@ public class MainController extends CommandOpMode {
                 new ChasisCommand(chasisSusbystem, driverController));
 
         new Trigger(() ->
-                mechanismController.getTrigger(GamepadKeys.Trigger.LEFT_TRIGGER) > 0.1
-        ).whenActive(new IntakeCommand(intakeSubsystem, shooterSubsystem, mechanismController));
-
-        new Trigger(() ->
-                mechanismController.getButton(GamepadKeys.Button.B)
-        ).whileActiveContinuous(new IntakeCommandReverse(intakeSubsystem, shooterSubsystem, mechanismController));
+                driverController.getTrigger(GamepadKeys.Trigger.LEFT_TRIGGER) > 0.1
+        ).whenActive(new IntakeCommand(intakeSubsystem, shooterSubsystem, driverController));
 
 
         //----------------------------/Shooter/----------------------
@@ -88,7 +87,14 @@ public class MainController extends CommandOpMode {
         ).whileActiveContinuous(new ShooterCommand(shooterSubsystem, intakeSubsystem, mechanismController));
 
         new InstantCommand(() -> shooterSubsystem.setTargetVelocity(0), shooterSubsystem);
+
+        //----------------------------/Servo FLOWER/----------------------
+        new Trigger(() ->
+                driverController.wasJustPressed(GamepadKeys.Button.B)
+        ).whenActive(new InstantCommand(() -> new IntakeServoCommand(intakeServoSubsystem, driverController)
+        ));
     }
+
 
     //----------------------------/Telemetry/----------------------
 

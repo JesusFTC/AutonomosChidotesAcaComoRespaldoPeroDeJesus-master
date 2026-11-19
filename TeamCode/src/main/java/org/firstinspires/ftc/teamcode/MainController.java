@@ -90,9 +90,9 @@ public class MainController extends CommandOpMode {
 
         //----------------------------/Servo FLOWER/----------------------
         new Trigger(() ->
-                driverController.wasJustPressed(GamepadKeys.Button.B)
-        ).whenActive(new InstantCommand(() -> new IntakeServoCommand(intakeServoSubsystem, driverController)
-        ));
+                driverController.isDown(GamepadKeys.Button.B)
+        ).whileActiveContinuous(new IntakeServoCommand(intakeServoSubsystem, driverController)
+        );
     }
 
 
@@ -106,6 +106,8 @@ public class MainController extends CommandOpMode {
         telemetry.addData("Heading", configureIMU.getHeading(AngleUnit.DEGREES));
         telemetry.addData("RX", chasisSusbystem.getOutPID());
         telemetry.addData("Shooter RPM", shooterSubsystem.getVelocity());
+        telemetry.addData("Puerto del servo", intakeServoSubsystem.getPort());
+        telemetry.addData("Posición del servo", intakeServoSubsystem.getPosition());
 
         follower.update();
         Drawing.drawRobot(follower.pose());

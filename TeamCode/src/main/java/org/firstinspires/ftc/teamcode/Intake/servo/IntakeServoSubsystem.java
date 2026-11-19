@@ -8,20 +8,26 @@ import com.seattlesolvers.solverslib.hardware.servos.ServoExGroup;
 public class IntakeServoSubsystem extends SubsystemBase {
     private ServoEx servoLeft;
     private ServoEx servoRight;
-    private ServoExGroup servoGroup;
+    private ServoExGroup ServoGroup;
     public IntakeServoSubsystem(HardwareMap hwMap){
-
         servoLeft = new ServoEx(hwMap, "ServoLeft");
         servoRight = new ServoEx(hwMap, "ServoRight");
 
         servoLeft.setInverted(true);
-        servoGroup = new ServoExGroup(servoLeft, servoRight);
+
+        ServoGroup = new ServoExGroup(servoLeft, servoRight);
     }
     public void start(){
-        servoGroup.set(1);
+        ServoGroup.set(1);
     }
     public void stop(){
-        servoGroup.set(0);
+        ServoGroup.set(0);
+    }
+    public double getPosition(){
+        return servoLeft.getRawPosition();
+    }
+    public double getPort(){
+        return servoLeft.getPortNumber();
     }
 
     @Override

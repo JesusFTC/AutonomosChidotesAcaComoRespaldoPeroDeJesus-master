@@ -4,7 +4,7 @@ import com.seattlesolvers.solverslib.command.CommandBase;
 import com.seattlesolvers.solverslib.gamepad.GamepadEx;
 
 public class IntakeServoCommand extends CommandBase {
-    private final IntakeServoSubsystem servoSubsystem;
+    private IntakeServoSubsystem servoSubsystem;
     GamepadEx gamepadEx;
     public IntakeServoCommand(IntakeServoSubsystem servoSubsystem, GamepadEx gamepadEx){
         this.servoSubsystem = servoSubsystem;
@@ -19,11 +19,18 @@ public class IntakeServoCommand extends CommandBase {
 
     @Override
     public void execute() {
+        servoSubsystem.start();
         super.execute();
     }
 
     @Override
     public void end(boolean interrupted) {
+        servoSubsystem.stop();
         super.end(interrupted);
+    }
+
+    @Override
+    public boolean isFinished() {
+        return super.isFinished();
     }
 }

@@ -25,12 +25,9 @@ import com.pedropathing.paths.interpolator.Interpolator;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
-import com.seattlesolvers.solverslib.command.CommandScheduler;
 
-import org.firstinspires.ftc.teamcode.Intake.IntakeAutonomousCommand;
-import org.firstinspires.ftc.teamcode.Intake.IntakeSubsystem;
-import org.firstinspires.ftc.teamcode.Shooter.ShooterAutonomousCommand;
-import org.firstinspires.ftc.teamcode.Shooter.ShooterSubsystem;
+import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
+import org.firstinspires.ftc.teamcode.ConfigureIMU;
 import org.firstinspires.ftc.teamcode.pedro.Constants;
 
 @Autonomous(name = "BLUE_UP_ShootUp_IntakeHuman_Park", group = "Autonomous")
@@ -43,21 +40,14 @@ public class BLUE_UP_ShootUp_IntakeHuman_Park extends OpMode {
   private int pathState; // Current autonomous path state (state machine)
   private ElapsedTime pathTimer; // Timer for path state machine
   private Paths paths; // Paths defined in the Paths class
-  private ShooterSubsystem shooterSubsystem;
-  private IntakeSubsystem intakeSubsystem;
-  private ShooterAutonomousCommand shooterAutonomousCommand;
-  private IntakeAutonomousCommand intakeAutonomousCommand;
+  private ConfigureIMU imu;
 
   @Override
   public void init() {
-    CommandScheduler.getInstance().reset();
-    shooterSubsystem = new ShooterSubsystem(hardwareMap);
-    intakeSubsystem = new IntakeSubsystem(hardwareMap);
-    shooterAutonomousCommand = new ShooterAutonomousCommand(shooterSubsystem,intakeSubsystem);
-    intakeAutonomousCommand = new IntakeAutonomousCommand(intakeSubsystem, shooterSubsystem);
     panelsTelemetry = PanelsTelemetry.INSTANCE.getTelemetry();
     // ...
     panelsTelemetry.debug("Status", "Initialized");
+    panelsTelemetry.debug(imu.getHeading(AngleUnit.DEGREES));
     panelsTelemetry.update(telemetry);
 
     follower = Constants.create(hardwareMap);
@@ -69,7 +59,6 @@ public class BLUE_UP_ShootUp_IntakeHuman_Park extends OpMode {
 
   @Override
   public void loop() {
-    CommandScheduler.getInstance().run();
     follower.update(); // Update follower
     pathState = autonomousPathUpdate(); // Update autonomous state machine
 
@@ -116,18 +105,15 @@ public class BLUE_UP_ShootUp_IntakeHuman_Park extends OpMode {
         setPathState(1);
         break;
       case 1:
-        if (pathTimer.milliseconds() > 8000) {
+        if (pathTimer.milliseconds() > 10000) {
           setPathState(2);
         }
         break;
       case 2:
-        shooterAutonomousCommand.schedule();
         setPathState(3);
         break;
       case 3:
         if (pathTimer.milliseconds() > 4000) {
-          shooterAutonomousCommand.cancel();
-          shooterSubsystem.stop();
           setPathState(4);
         }
         break;
@@ -172,7 +158,6 @@ public class BLUE_UP_ShootUp_IntakeHuman_Park extends OpMode {
         }
         break;
       case 12:
-        intakeAutonomousCommand.schedule();
         follower.follow(paths.line3);
         setPathState(13);
         break;
@@ -186,8 +171,6 @@ public class BLUE_UP_ShootUp_IntakeHuman_Park extends OpMode {
         break;
       case 15:
         if (pathTimer.milliseconds() > 3000) {
-          intakeAutonomousCommand.cancel();
-          intakeSubsystem.stop();
           setPathState(16);
         }
         break;
